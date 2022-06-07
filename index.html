@@ -9,12 +9,23 @@
     <title>Weather forecast</title>
     <script
       type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUjmkCQQG29exOXnmKTz6BvnJsuAmotDc&libraries=places"
     ></script>
   </head>
   <body>
-    <div id="app"></div>
-    <input type="text" id="autocomplete" />
+    <!-- Top part -->
+    <div>
+      <div>Favorite cities</div>
+      <input type="text" id="autocomplete" />
+    </div>
+
+    <!-- Current location weather -->
+    <div></div>
+    <!-- 5 days weather -->
+    <div></div>
+    <!-- 3hours weather -->
+    <div></div>
+
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
