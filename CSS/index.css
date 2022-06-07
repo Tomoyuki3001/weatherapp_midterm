@@ -4,4 +4,45 @@ input {
   border-radius: 4px;
   border: 1px solid rgb(186, 178, 178);
   box-shadow: 0px 0px 12px #efefef;
+}
+
+.basic_layout {
+  margin: 3% 5%;
+}
+
+.header_search_part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current_part_box {
+  height: 150px;
+  background-color: cornflowerblue;
+}
+
+.days_part_box {
+  height: 100px;
+  background-color: burlywood;
+}
+
+.hours_part_box {
+  height: 600px;
+  background-color: darkgrey;
+}
+
+@media screen and (min-width: 376px) {
+  .current_part_box {
+    height: 400px;
+    background-color: cornflowerblue;
+  }
+
+  .days_part_box {
+    height: 200px;
+    background-color: burlywood;
+  }
+
+  .hours_part_box {
+    height: 200px;
+    background-color: darkgrey;
+  }
 }/*# sourceMappingURL=index.css.map */
