@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="./CSS/reset.css" />
     <link rel="stylesheet" href="./CSS/index.css" />
     <title>Weather forecast</title>
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places"
+    ></script>
   </head>
   <body>
-    <h1>Test</h1>
+    <div id="app"></div>
+    <input type="text" id="autocomplete" />
+    <script src="./Js/jquery-3.6.0.min.js"></script>
+    <script type="module" src="./Js/openOnLoad.js"></script>
+    <script type="module" src="./Js/searchingInput.js"></script>
   </body>
 </html>
