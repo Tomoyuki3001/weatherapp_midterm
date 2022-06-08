@@ -9,11 +9,25 @@
     <title>Weather forecast</title>
     <script
       type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo33wt2zOECC31ljjSI1UQtG_6K3wl0dA&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
     ></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="container">
+        <img src="" alt="" srcset="" id="weather-icon">
+        <div id="location">Unable to Fetch Weather</div>
+        <div class="desc">No Information Available.</div>
+        <div class="weather">
+            <div class="c">Error</div>
+            <div class="circle"></div>
+            <div class="f">Error</div>
+        </div>
+        <div class="info">
+            <h4>Sunrise: <span class="sunrise">No Information Available</span></h4>
+            <h4>Sunset: <span class="sunset">No Information Available</span></h4>
+        </div>
+    </div>
     <input type="text" id="autocomplete" />
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
