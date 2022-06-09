@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/reset.css" />
     <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather forecast</title>
     <script
       type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUjmkCQQG29exOXnmKTz6BvnJsuAmotDc&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key="
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   <body>
     <!-- Top part -->
@@ -25,15 +33,20 @@
     </div>
 
     <!-- Current location weather -->
-    <div class="current_part_box basic_layout">Current weather part</div>
+    <div class="current-info"></div>
+
     <!-- 5 days weather -->
-    <div class="days_part_box basic_layout">5 days weather</div>
+    <div class="weather-forecast-days" id="weather-forecast-days"></div>
+
     <!-- 3hours weather -->
-    <div class="hours_part_box basic_layout">3hours weather</div>
+    <div class="weather-forecast-hours" id="weather-forecast-hours"></div>
 
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
     <script type="module" src="./Js/favoriteCities.js"></script>
+    <script type="module" src="./Js/daysHoursWheather.js"></script>
+    <script type="module" src="./Js/index.js"></script>
+    <script src="./Js/searchingHoursWheather.js"></script>
   </body>
 </html>
