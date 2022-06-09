@@ -1,0 +1,73 @@
+//Style settings
+input {
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(186, 178, 178);
+    box-shadow: 0px 0px 12px #efefef;
+  }
+
+.basic_layout {
+  margin: 3% 5%;
+}
+
+//header search part
+.header_search_part {
+  display: flex;
+  justify-content: space-between;
+}
+
+//Current location weather
+.current-info {
+  height: 300px;
+  width: 90%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+//5 days weather
+.weather-forecast-days {
+  height: 200px;
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-around;
+  .weather-forecast-items {
+    height: 90%;
+    width: 18%;
+    margin-top: 1.5%;
+    background-color: #ffffff;
+  }
+}
+
+//3hours weather
+.weather-forecast-hours {
+  height: 400px;
+  background-color: darkgrey;
+  padding-top: 3%;
+  .hours_box {
+    height: 10%;
+    width: 90%;
+    margin: 2% 0% 2% 5%;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  //Current location weather
+.current_part_box {
+  height: 400px;
+  background-color: cornflowerblue;
+}
+
+//5 days weather
+.days_part_box {
+  height: 200px;
+  background-color: burlywood;
+}
+
+//3hours weather
+.hours_part_box {
+  height: 200px;
+  background-color: darkgrey;
+}
+}
