@@ -14,6 +14,8 @@ var autocomplete = new google.maps.places.Autocomplete(input, options);
 autocomplete.addListener("place_changed", function () {
   // Get place info
   var place = autocomplete.getPlace();
+  console.log("place", place.name)
+  localStorage.setItem("cityName", place.name)
   // Do whatever with the value!
   let latitude = place.geometry.location.lat();
   let longitude = place.geometry.location.lng();

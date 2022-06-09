@@ -15,7 +15,12 @@
   <body>
     <!-- Top part -->
     <div class="header_search_part basic_layout">
-      <div>Favorite cities</div>
+      <select name="" id="favorite">
+        <option value="1">-- Your favorite City --</option>
+       </select>
+      <button id="button">☆</button>
+      
+      <!-- <div>Favorite cities</div> -->
       <input type="text" id="autocomplete" />
     </div>
 
@@ -29,5 +34,6 @@
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
+    <script type="module" src="./Js/favoriteCities.js"></script>
   </body>
 </html>
