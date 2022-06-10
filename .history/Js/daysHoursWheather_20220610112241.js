@@ -24,17 +24,22 @@ function showWheatherData(data) {
 
   console.log(dateObject);
 
-  console.log(daysNewWheather[0].main.temp);
+  const newDaysArray = [];
+  const daysWheatherData = data.list;
+  console.log(daysWheatherData);
+  newDaysArray.push(
+    daysWheatherData[5],
+    daysWheatherData[13],
+    daysWheatherData[21],
+    daysWheatherData[29],
+    daysWheatherData[37]
+  );
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < newDaysArray.length; i++) {
     const daysCard = document.createElement("div");
     daysCard.classList.add("days_card");
 
-    let daysNewArray = Object.keys(dateObject);
-    let daysNewWheather = dateObject[daysNewArray[i]];
-
-    let temp = daysNewWheather.main.temp;
-    console.log(temp);
+    let temp = newDaysArray[i].main.temp;
     let newTemp = Math.trunc(temp);
     let tempFeels = newDaysArray[i].main.feels_like;
     let newTempFeels = Math.trunc(tempFeels);

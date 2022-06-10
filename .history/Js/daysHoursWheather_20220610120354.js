@@ -22,18 +22,14 @@ function showWheatherData(data) {
     }
   });
 
-  console.log(dateObject);
-
-  console.log(daysNewWheather[0].main.temp);
+  let daysNewArray = Object.keys(dateObject);
+  console.log(daysNewArray[0]);
 
   for (let i = 0; i < 6; i++) {
     const daysCard = document.createElement("div");
     daysCard.classList.add("days_card");
 
-    let daysNewArray = Object.keys(dateObject);
-    let daysNewWheather = dateObject[daysNewArray[i]];
-
-    let temp = daysNewWheather.main.temp;
+    let temp = daysNewArray[i].main.temp;
     console.log(temp);
     let newTemp = Math.trunc(temp);
     let tempFeels = newDaysArray[i].main.feels_like;

@@ -24,13 +24,14 @@ function showWheatherData(data) {
 
   console.log(dateObject);
 
+  let daysNewArray = Object.keys(dateObject);
+
   console.log(daysNewWheather[0].main.temp);
 
   for (let i = 0; i < 6; i++) {
     const daysCard = document.createElement("div");
     daysCard.classList.add("days_card");
 
-    let daysNewArray = Object.keys(dateObject);
     let daysNewWheather = dateObject[daysNewArray[i]];
 
     let temp = daysNewWheather.main.temp;
