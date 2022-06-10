@@ -11,6 +11,10 @@ input {
   box-shadow: 0px 0px 12px #efefef;
 }
 
+.basic_layout {
+  margin: 3% 5%;
+}
+
 .header_search_part {
   display: flex;
   justify-content: space-between;
@@ -40,20 +44,15 @@ input {
   height: 350px;
   background-color: darkgrey;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
-.weather-forecast-hours .hours_box {
-  text-align: center;
-}
-.weather-forecast-hours .hours_box .hours_date, .weather-forecast-hours .hours_box .hours_time, .weather-forecast-hours .hours_box .hours_pop {
+.weather-forecast-hours .wheather-tbody .hours_date, .weather-forecast-hours .wheather-tbody .hours_time, .weather-forecast-hours .wheather-tbody .hours_pop {
   font-size: 1.1rem;
 }
-.weather-forecast-hours .hours_box .hours_temp {
+.weather-forecast-hours .wheather-tbody .hours_temp {
   font-size: 1.5rem;
   margin-bottom: 3%;
 }
-.weather-forecast-hours .hours_box .hours_temp_feels {
+.weather-forecast-hours .wheather-tbody .hours_temp_feels {
   font-size: 1.2rem;
   margin-bottom: 3%;
 }
@@ -91,33 +90,33 @@ input {
     height: 400px;
     background-color: darkgrey;
     padding-top: 3%;
-    display: grid;
   }
-  .weather-forecast-hours .hours_box {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
+  .weather-forecast-hours .wheather-tbody {
+    display: block;
+    height: 10%;
     width: 90%;
-    margin-left: 5%;
+    margin: 2% 0% 2% 5%;
   }
-  .weather-forecast-hours .hours_box .hours_date, .weather-forecast-hours .hours_box .hours_time {
+  .weather-forecast-hours .wheather-tbody .hours_date_time {
+    text-align: center;
+  }
+  .weather-forecast-hours .wheather-tbody .hours_date_time .hours_date, .weather-forecast-hours .wheather-tbody .hours_date_time .hours_time {
     font-size: 10px;
   }
-  .weather-forecast-hours .hours_box .hours_weather-icon {
+  .weather-forecast-hours .wheather-tbody .hours_weather-icon {
     width: 2.5rem;
     height: 2.5rem;
   }
-  .weather-forecast-hours .hours_box .hours_temp {
+  .weather-forecast-hours .wheather-tbody .hours_temp {
     font-size: 1.5rem;
   }
-  .weather-forecast-hours .hours_box .hours_feels {
+  .weather-forecast-hours .wheather-tbody .hours_feels {
     font-size: 0.5rem;
   }
-  .weather-forecast-hours .hours_box .hours_temp_feels, .weather-forecast-hours .hours_box .hours_pop {
+  .weather-forecast-hours .wheather-tbody .hours_temp_feels {
     font-size: 0.7rem;
   }
-  .weather-forecast-hours .hours_box .hours_feels_box {
-    text-align: center;
+  .weather-forecast-hours .wheather-tbody .hours_pop {
+    font-size: 0.7rem;
   }
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index_20220609101702.css.map */

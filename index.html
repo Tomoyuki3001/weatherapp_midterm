@@ -13,10 +13,9 @@
       rel="stylesheet"
     />
     <title>Weather forecast</title>
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key="
-    ></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5pjTCaMrqPgBkLlk3cUL3NysomYLwuRM&libraries=places">
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
@@ -30,6 +29,7 @@
       
       <!-- <div>Favorite cities</div> -->
       <input type="text" id="autocomplete" />
+      <!-- <div id="root"></div> -->
     </div>
 
     <!-- Current location weather -->
@@ -42,11 +42,9 @@
     <div class="weather-forecast-hours" id="weather-forecast-hours"></div>
 
     <script src="./Js/jquery-3.6.0.min.js"></script>
-    <script type="module" src="./Js/openOnLoad.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
     <script type="module" src="./Js/favoriteCities.js"></script>
     <script type="module" src="./Js/daysHoursWheather.js"></script>
     <script type="module" src="./Js/index.js"></script>
-    <script src="./Js/searchingHoursWheather.js"></script>
   </body>
 </html>

@@ -11,6 +11,10 @@ input {
   box-shadow: 0px 0px 12px #efefef;
 }
 
+.basic_layout {
+  margin: 3% 5%;
+}
+
 .header_search_part {
   display: flex;
   justify-content: space-between;
@@ -41,7 +45,6 @@ input {
   background-color: darkgrey;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 .weather-forecast-hours .hours_box {
   text-align: center;
@@ -120,4 +123,4 @@ input {
   .weather-forecast-hours .hours_box .hours_feels_box {
     text-align: center;
   }
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index_20220609104042.css.map */

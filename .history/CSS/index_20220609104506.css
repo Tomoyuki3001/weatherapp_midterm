@@ -3,19 +3,6 @@ body {
   margin: 0%;
 }
 
-input {
-  height: 30px;
-  padding-left: 10px;
-  border-radius: 4px;
-  border: 1px solid rgb(186, 178, 178);
-  box-shadow: 0px 0px 12px #efefef;
-}
-
-.header_search_part {
-  display: flex;
-  justify-content: space-between;
-}
-
 .weather-forecast-days {
   height: 350px;
   background-color: burlywood;
@@ -120,4 +107,4 @@ input {
   .weather-forecast-hours .hours_box .hours_feels_box {
     text-align: center;
   }
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index_20220609104506.css.map */

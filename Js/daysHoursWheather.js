@@ -19,6 +19,9 @@ const weatherForecastE2 = document.getElementById("weather-forecast-hours");
 // getWheatherData();
 
 function showWheatherData(data) {
+  weatherForecastE1.innerHTML = "";
+  weatherForecastE2.innerHTML = "";
+  
   const newDaysArray = [];
   const daysWheatherData = data.list;
   newDaysArray.push(
@@ -59,6 +62,9 @@ function showWheatherData(data) {
 
     `;
     weatherForecastE1.appendChild(daysCard);
+    daysCard.addEventListener("click", () => {
+      console.log("clicked")
+    })
   }
 
   const hoursData = data.list;

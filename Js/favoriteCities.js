@@ -23,41 +23,6 @@ function addOption() {
   option.value = 0;
   // add option tag to child select element
   select.appendChild(option);
+  console.log(option)
  }
-
- var getCityName = document.getElementById("option");
- getCityName.addEventListener("click" , search);
- function search(){
-   var data = document.getElementById("option");
-   localStorage.getItem("cityName", )
-
- }
-
-
-//  localStorage.setItem('cityName', JSON.stringify(cityArr));
-
-//  cityArr = JSON.parse( localStorage.getItem('CityName') ); 
-//  localStorage.removeItem("cityName");
-
-
-
-
-// let cityArr = ["a"];
-// myStorage = localStorage;
-// localStorage.setItem('history', JSON.stringify(cityArr)); 
-
-// string stored in local storage: "[\"a\"]"
-
-// To get it back you:
-// cityArr = JSON.parse( localStorage.getItem('favorite') ); 
  
- 
-//  api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
- 
-  // function set() {
-  // var k = document.getElementById("k").value;
-  // var v = document.getElementById("v").value;
-  // localStorage.setItem(k, v);
-  // show_result();
-  // }
-

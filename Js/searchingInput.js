@@ -1,43 +1,40 @@
-import WEATHER_OPEN_KEY from "./apikeys.js";
+import { getData } from "./index.js";
 
 // Autocomplete Options
-var defaultBounds = new google.maps.LatLngBounds();
 var options = {
-  types: ["(cities)"],
-  bounds: defaultBounds,
+  types: ["(cities)"]
 };
+
 // get DOM’s input element
 var input = document.getElementById("autocomplete");
+console.log("input",input)
 // Make Autocomplete instance
-var autocomplete = new google.maps.places.Autocomplete(input, options);
-// Listener for whenever input value changes
-autocomplete.addListener("place_changed", function () {
-  // Get place info
-  var place = autocomplete.getPlace();
-  console.log("place", place.name)
-  localStorage.setItem("cityName", place.name)
-  // Do whatever with the value!
-  let latitude = place.geometry.location.lat();
-  let longitude = place.geometry.location.lng();
-  const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${WEATHER_OPEN_KEY}`;
-  //Create objects for Ajax communication
-  let xhr = new XMLHttpRequest();
-  //Set signal and URL
-  xhr.open("GET", requestUrl);
-  //Execute signal
-  xhr.send();
-  //after change function, execute signal.
-  xhr.onreadystatechange = function () {
-    //complete signal.
-    if (xhr.readyState == 4) {
-      ShowTodaysWeather(xhr.responseText);
-    }
-  };
+document.addEventListener("DOMContentLoaded", () => {
+  var autocomplete = new google.maps.places.Autocomplete(input, options);
+  // Listener for whenever input value changes
+  autocomplete.addListener("place_changed", function () {
+    // Get place info
+    var place = autocomplete.getPlace();
+    // console.log("place", place.geometry.location.lat())
+    localStorage.setItem("cityName", place.name)
+    // Do whatever with the value!
+    let latitude = place.geometry.location.lat();
+    let longitude = place.geometry.location.lng();
+    console.log(latitude, longitude)
+    let coordinate = {cityName:place.name, latitude, longitude
+     }
+     console.log(coordinate);
+     localStorage.setItem('cityData', JSON.stringify(coordinate))
+    // localStorage.setItem("cordinate",latitude);
+    getData("forecast", latitude, longitude); 
+    getData("current", latitude, longitude);
+  });
+})
+// let coordinate = {city, latitude, longitude}
+// }
+// localStorage.setItem('testObject', JSON.stringify(testObject));
 
-  //  Display current weather
+// var retrievedObject = localStorage.getItem('testObject');
 
-  function ShowTodaysWeather(response) {
-    let obj = JSON.parse(response);
-    console.log(obj);
-  }
-});
+// console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
