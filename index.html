@@ -9,27 +9,26 @@
     <title>Weather forecast</title>
     <script
       type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9g9Vt-OKYVGU1knsVuBrMYgjj2564e1A&libraries=places"
     ></script>
   </head>
   <body>
     <div id="app">
-      <div class="container">
-        <img src="" alt="" srcset="" id="weather-icon">
-        <div id="location">Unable to Fetch Weather</div>
-        <div class="desc">No Information Available.</div>
-        <div class="weather">
-            <div class="c">Error</div>
-            <div class="circle"></div>
-            <div class="f">Error</div>
+      <h2 class="city">Weather in the World</h2>
+      <div class="card">
+        <div class="weather loading">
+          <h1 class="temp">25 °C</h1>
+          <div class="flex">
+            <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+            <div class="description">Cloudy</div>
+          </div>
+          <div class="humidity">Humidity: 60%</div>
+          <div class="wind">Wind speed: 6.2 km/h</div>
         </div>
-        <div class="info">
-            <h4>Sunrise: <span class="sunrise">No Information Available</span></h4>
-            <h4>Sunset: <span class="sunset">No Information Available</span></h4>
-        </div>
+      </div>
     </div>
-    <input type="text" id="autocomplete" />
     <script src="./Js/jquery-3.6.0.min.js"></script>
+    <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
   </body>

@@ -1,57 +1,48 @@
-const api = {
-    "apikey": "6c59dedd8571d8744b0f1b86011d6de9"
-}
+let weather = {
+  apiKey: "6c59dedd8571d8744b0f1b86011d6de9",
+  fetchWeather: function (city) {
+    console.log("city",city)
+    fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+        city +
+        "&units=metric&appid=" +
+        this.apiKey
+    )
+      .then((response) => response.json())
+      .then((data) => this.displayWeather(data));
+    },
+    displayWeather: function(data) {
+      const {name} = data;
+      const {icon, description} = data.weather[0];
+      const {temp, humidity} = data.main;
+      const {speed} = data.wind;
+      console.log(name,icon,description,temp,humidity,speed);
+      document.querySelector(".city").innerText = "Weather in " + name;
+      document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+      document.querySelector(".description").innerText = description;
+      document.querySelector(".temp").innerText = temp + "°C";
+      document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+      document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
+      document.querySelector(".weather").classList.remove("loading");
+    },
+  };
 
-const iconImg = document.getElementById('weather-icon');
-const loc = document.querySelector('#location');
-const tempC = document.querySelector('.c');
-const tempF = document.querySelector('.f');
-const desc = document.querySelector('.desc');
-const sunriseDOM = document.querySelector('.sunrise');
-const sunsetDOM = document.querySelector('.sunset');
+  weather.fetchWeather("Venice");
 
-window.addEventListener('load', () => {
-  let long;
-  let lat;
-  // Accesing Geolocation of User
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      // Storing Longitude and Latitude in variables
-      long = position.coords.longitude;
-      lat = position.coords.latitude;
-      const base = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`;
+//   search: function () {
+//     this.fetchWeather(document.querySelector(".lookweather").value);
+//   }
+// };
 
-      // Using fetch to get data
-      fetch(base)
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          const { temp } = data.main;
-          const place = data.name;
-          const { description, icon } = data.weather[0];
-          const { sunrise, sunset } = data.sys;
+// document.querySelector(".search button").addEventListener("click", function() {
+//   weather.search();
+// });
 
-          const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-          const fahrenheit = (temp * 9) / 5 + 32;
-
-          // Converting Epoch(Unix) time to GMT
-          const sunriseGMT = new Date(sunrise * 1000);
-          const sunsetGMT = new Date(sunset * 1000);
-
-          // Interacting with DOM to show data
-          iconImg.src = iconUrl;
-          loc.textContent = `${place}`;
-          desc.textContent = `${description}`;
-          tempC.textContent = `${temp.toFixed(2)} °C`;
-          tempF.textContent = `${fahrenheit.toFixed(2)} °F`;
-          sunriseDOM.textContent = `${sunriseGMT.toLocaleDateString()}, ${sunriseGMT.toLocaleTimeString()}`;
-          sunsetDOM.textContent = `${sunsetGMT.toLocaleDateString()}, ${sunsetGMT.toLocaleTimeString()}`;
-        });
-    });
-  }
-});
-
-
+// document.querySelector(".lookweather").addEventListener("keyup", function (event) {
+//   if (event.key == "Enter") {
+//     weather.search();
+//   }
+// };
 
   
+ 
