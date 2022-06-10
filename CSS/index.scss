@@ -79,3 +79,50 @@ input {
       margin: 1em;
     }
   }
+.basic_layout {
+  margin: 3% 5%;
+}
+
+//header search part
+.header_search_part {
+  display: flex;
+  justify-content: space-between;
+}
+
+//Current location weather
+.current_part_box {
+  height: 150px;
+  background-color: cornflowerblue;
+}
+
+//5 days weather
+.days_part_box {
+  height: 100px;
+  background-color: burlywood;
+}
+
+//3hours weather
+.hours_part_box {
+  height: 600px;
+  background-color: darkgrey;
+}
+
+@media screen and (min-width: 376px) {
+  //Current location weather
+.current_part_box {
+  height: 400px;
+  background-color: cornflowerblue;
+}
+
+//5 days weather
+.days_part_box {
+  height: 200px;
+  background-color: burlywood;
+}
+
+//3hours weather
+.hours_part_box {
+  height: 200px;
+  background-color: darkgrey;
+}
+}

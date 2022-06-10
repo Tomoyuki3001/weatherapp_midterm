@@ -9,10 +9,16 @@
     <title>Weather forecast</title>
     <script
       type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9g9Vt-OKYVGU1knsVuBrMYgjj2564e1A&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUjmkCQQG29exOXnmKTz6BvnJsuAmotDc&libraries=places"
     ></script>
   </head>
   <body>
+    <!-- Top part -->
+    <div class="header_search_part basic_layout">
+      <div>Favorite cities</div>
+      <input type="text" id="autocomplete" />
+    </div>
+    
     <div id="app">
       <h2 class="city">Weather in the World</h2>
       <div class="card">
@@ -27,6 +33,14 @@
         </div>
       </div>
     </div>
+
+    <!-- Current location weather -->
+    <div class="current_part_box basic_layout">Current weather part</div>
+    <!-- 5 days weather -->
+    <div class="days_part_box basic_layout">5 days weather</div>
+    <!-- 3hours weather -->
+    <div class="hours_part_box basic_layout">3hours weather</div>
+
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
