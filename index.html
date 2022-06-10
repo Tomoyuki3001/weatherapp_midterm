@@ -18,6 +18,21 @@
       <div>Favorite cities</div>
       <input type="text" id="autocomplete" />
     </div>
+    
+    <div id="app">
+      <h2 class="city">Weather in the World</h2>
+      <div class="card">
+        <div class="weather loading">
+          <h1 class="temp">25 °C</h1>
+          <div class="flex">
+            <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+            <div class="description">Cloudy</div>
+          </div>
+          <div class="humidity">Humidity: 60%</div>
+          <div class="wind">Wind speed: 6.2 km/h</div>
+        </div>
+      </div>
+    </div>
 
     <!-- Current location weather -->
     <div class="current_part_box basic_layout">Current weather part</div>
@@ -27,6 +42,7 @@
     <div class="hours_part_box basic_layout">3hours weather</div>
 
     <script src="./Js/jquery-3.6.0.min.js"></script>
+    <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/openOnLoad.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
   </body>
