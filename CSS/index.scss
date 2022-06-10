@@ -9,7 +9,6 @@ input {
 
   body {
     padding: auto;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -68,6 +67,11 @@ input {
   margin: 3% 5%;
 }
 //Whole setting
+//header search part
+.header_search_part {
+  display: flex;
+  justify-content: space-between;
+}
 
 //5 days weather
 .weather-forecast-days {

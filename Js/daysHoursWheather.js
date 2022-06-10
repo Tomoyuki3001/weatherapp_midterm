@@ -3,6 +3,18 @@ const weatherForecastE2 = document.getElementById("weather-forecast-hours");
 
 function showWheatherData(data) {
   let dateObject = {};
+  weatherForecastE1.innerHTML = "";
+  weatherForecastE2.innerHTML = "";
+  
+  const newDaysArray = [];
+  const daysWheatherData = data.list;
+  newDaysArray.push(
+    daysWheatherData[5],
+    daysWheatherData[13],
+    daysWheatherData[21],
+    daysWheatherData[29],
+    daysWheatherData[37]
+  );
 
   data.list.forEach((forecastObj) => {
     let date = forecastObj.dt_txt.slice(0, 10);
@@ -59,6 +71,9 @@ function showWheatherData(data) {
 
     `;
     weatherForecastE1.appendChild(daysCard);
+    daysCard.addEventListener("click", () => {
+      console.log("clicked")
+    })
   }
   const daysCardArray = document.querySelectorAll(".days_card");
   console.log(daysCardArray);
