@@ -25,4 +25,12 @@ function addOption() {
   select.appendChild(option);
   console.log(option)
  }
+ var select = document.querySelector("select")
+ select.addEventListener("change", () => {
+   console.log("change")
+ });
+ function getInfo(){
+ }
+
  
+//  let getCityData = localStorage.getItem('cityData')
