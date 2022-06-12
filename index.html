@@ -15,27 +15,24 @@
     <title>Weather forecast</title>
     <script
       async
-      src="https://maps.googleapis.com/maps/api/js?key==places"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5pjTCaMrqPgBkLlk3cUL3NysomYLwuRM&libraries=places"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   <body>
     <!-- Searching with inout and registering favorite cities -->
-    <div class="header_search_part">
-      <div class="wheather-select-box">
-        <select class="wheather-select" name="" id="favorite">
-          <option value="1">-- Your favorite City --</option>
-        </select>
-        <button class="wheather-button" id="button">☆</button>
-      </div>
-      <input class="wheather-input" type="text" id="autocomplete" />
+    <div class="header_search_part basic_layout">
+      <select name="" id="favorite">
+        <option value="1">-- Your favorite City --</option>
+      </select>
+      <input type="text" id="autocomplete" />
     </div>
 
-    <!-- Current location wheather forecast -->
-    <div class="wheather-forecast-current" id="app">
-      <div class="current-box">
-        <h2 class="city">Weather in the World</h2>
+    <div id="app">
+      <h2 class="city">Weather in the World</h2>
+      <div class="card" id="current-weather-card">
+        <button id="favorite-btn">☆</button>
         <div class="weather loading">
           <h1 class="temp">25 °C</h1>
           <div class="flex">
@@ -62,7 +59,8 @@
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
-    <script type="module" src="./Js/favoriteCities.js"></script>
+    <script type="module" src="./Js/favoriteButton.js"></script>
+    <script type="module" src="./Js/favoriteSelector.js"></script>
     <script type="module" src="./Js/daysHoursWheather.js"></script>
     <script type="module" src="./Js/index.js"></script>
   </body>
