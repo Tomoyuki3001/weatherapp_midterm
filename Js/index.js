@@ -1,6 +1,5 @@
 import showWheatherData from "./daysHoursWheather.js";
 import WEATHER_OPEN_KEY from "./apikeys.js";
-// import getData from "searchingCityInput.js";
 
 navigator.geolocation.getCurrentPosition((success) => {
   let { latitude, longitude } = success.coords;
@@ -11,13 +10,13 @@ navigator.geolocation.getCurrentPosition((success) => {
 
 function storeDefaultCity(latitude, longitude) {
   let cityInfo = {
-      "cityName": "Your city",
-      "coordinate": {latitude, longitude},
-  }
+    cityName: "Your city",
+    coordinate: { latitude, longitude },
+  };
   localStorage.setItem("city", JSON.stringify(cityInfo));
 }
 
-export const getData = function(type, latitude, longitude) {
+export const getData = function (type, latitude, longitude) {
   if (!type) return;
   fetch(
     `https://api.openweathermap.org/data/2.5/${type}?lat=${latitude}&lon=${longitude}&exclude=minutely&units=metric&appid=${WEATHER_OPEN_KEY}`
@@ -32,4 +31,4 @@ export const getData = function(type, latitude, longitude) {
         showCurrentData(data);
       }
     });
-}
+};

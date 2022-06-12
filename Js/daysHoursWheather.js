@@ -108,8 +108,6 @@ function showWheatherData(data) {
       showUpHours(dateObject[day]);
     });
   });
-
-  // console.log("Object", dateObject);
 }
 
 export default showWheatherData;

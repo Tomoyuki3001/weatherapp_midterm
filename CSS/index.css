@@ -12,18 +12,14 @@ body {
   align-items: center;
   height: 5rem;
 }
-.header_search_part .wheather-select-box {
-  height: 100%;
-  width: 60%;
-  display: flex;
-  align-items: center;
-}
-.header_search_part .wheather-select-box .wheather-select {
-  width: 50%;
+.header_search_part .wheather-select {
+  width: 30%;
   font-size: 2rem;
+  border-radius: 4px;
+  background-color: rgba(44, 62, 80, 0.5);
 }
-.header_search_part .wheather-select-box .wheather-button {
-  width: 20%;
+.header_search_part .wheather-select .wheather-select-option {
+  width: 10%;
   font-size: 2rem;
 }
 .header_search_part .wheather-input {
@@ -39,10 +35,20 @@ body {
   height: 20rem;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .wheather-forecast-current .current-box {
+  width: 100%;
   text-align: center;
+}
+.wheather-forecast-current .current-box .current-cityname-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wheather-forecast-current .current-box .current-cityname-box .favorite-button {
+  margin-left: 3%;
+  font-size: 3rem;
+  cursor: pointer;
 }
 .wheather-forecast-current .current-box .city {
   font-size: 2.5rem;
@@ -76,7 +82,7 @@ body {
 
 .weather-forecast-days {
   height: 17rem;
-  margin-top: 2%;
+  margin-top: 3%;
   display: flex;
   text-align: center;
   justify-content: space-around;
@@ -134,16 +140,17 @@ body {
     align-items: center;
     padding: 0% 3%;
   }
-  .header_search_part .wheather-select-box .wheather-select {
-    width: 70%;
-    padding: 3% 3%;
+  .header_search_part .wheather-select {
+    width: 40%;
+    padding: 1.5% 3%;
     border-radius: 4px;
     background-color: rgba(44, 62, 80, 0.5);
     font-size: 0.7rem;
     height: 1.5rem;
   }
-  .header_search_part .wheather-select-box .wheather-button {
-    font-size: 1rem;
+  .header_search_part .wheather-select .wheather-select-option {
+    width: 10%;
+    font-size: 0.7rem;
   }
   .header_search_part .wheather-input {
     height: 1.5rem;
@@ -152,7 +159,7 @@ body {
     border-radius: 4px;
     border: 1px solid rgb(186, 178, 178);
     box-shadow: 0px 0px 5px #efefef;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 
   .wheather-forecast-current {
@@ -163,6 +170,14 @@ body {
   }
   .wheather-forecast-current .current-box {
     text-align: center;
+    width: 100%;
+  }
+  .wheather-forecast-current .current-box .current-cityname-box {
+    width: 100%;
+  }
+  .wheather-forecast-current .current-box .current-cityname-box .favorite-button {
+    margin-left: 5%;
+    font-size: 1.5rem;
   }
   .wheather-forecast-current .current-box .city {
     font-size: 1.2rem;

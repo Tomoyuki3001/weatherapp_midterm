@@ -1,14 +1,3 @@
-// export function appendCurrentWeatherInfo() {
-//   let favorite = document.getElementById("favorite"); 
-//   let favoriteCitiesContainer = document.createElement("div");
-//   favoriteCitiesContainer.setAttribute("id", "current-weather");
-//   favorite.appendChild(favoriteCitiesContainer);
-// }
-// export function updateCurrentWeather(weatherObj){
-//   let container = document.getElementById("current-weather");
-//   container.innerHTML = `<p>${JSON.stringify(weatherObj)}<p>`
-// }
-
 function addFavoriteCity() {
   let currentCity = JSON.parse(localStorage.getItem("city"));
 

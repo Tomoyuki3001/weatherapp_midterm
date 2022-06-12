@@ -12,10 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
-    <title>Weather forecast</title>
+    <title>World Weather Forecast</title>
     <script
       async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5pjTCaMrqPgBkLlk3cUL3NysomYLwuRM&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key==places"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -23,28 +23,36 @@
   <body>
     <!-- Searching with inout and registering favorite cities -->
     <div class="header_search_part basic_layout">
-      <select name="" id="favorite">
-        <option value="1">-- Your favorite City --</option>
+      <select class="wheather-select" name="" id="favorite">
+        <option class="wheather-select-option" value="1">
+          -- Your favorite City --
+        </option>
       </select>
-      <input type="text" id="autocomplete" />
+      <input class="wheather-input" type="text" id="autocomplete" />
     </div>
 
+    <!-- Current wheather forecast -->
+
     <div id="app">
-      <h2 class="city">Weather in the World</h2>
-      <div class="card" id="current-weather-card">
-        <button id="favorite-btn">☆</button>
-        <div class="weather loading">
-          <h1 class="temp">25 °C</h1>
-          <div class="flex">
-            <img
-              src="https://openweathermap.org/img/wn/04n.png"
-              alt=""
-              class="icon"
-            />
-            <div class="description">Cloudy</div>
+      <div class="wheather-forecast-current" id="current-weather-card">
+        <div class="current-box">
+          <div class="current-cityname-box">
+            <h2 class="city">Weather in the World</h2>
+            <button class="favorite-button" id="favorite-btn">☆</button>
           </div>
-          <div class="humidity">Humidity: 60%</div>
-          <div class="wind">Wind speed: 6.2 km/h</div>
+          <div class="weather loading">
+            <h1 class="temp">25 °C</h1>
+            <div class="flex">
+              <img
+                src="https://openweathermap.org/img/wn/04n.png"
+                alt=""
+                class="icon"
+              />
+              <div class="description">Cloudy</div>
+            </div>
+            <div class="humidity">Humidity: 60%</div>
+            <div class="wind">Wind speed: 6.2 km/h</div>
+          </div>
         </div>
       </div>
     </div>
