@@ -3,10 +3,19 @@ import WEATHER_OPEN_KEY from "./apikeys.js";
 // import getData from "searchingCityInput.js";
 
 navigator.geolocation.getCurrentPosition((success) => {
-  console.log(success);
   let { latitude, longitude } = success.coords;
+  storeDefaultCity(latitude, longitude);
   getData("forecast", latitude, longitude);
+  getData("weather", latitude, longitude);
 });
+
+function storeDefaultCity(latitude, longitude) {
+  let cityInfo = {
+      "cityName": "Your city",
+      "coordinate": {latitude, longitude},
+  }
+  localStorage.setItem("city", JSON.stringify(cityInfo));
+}
 
 export const getData = function(type, latitude, longitude) {
   if (!type) return;
@@ -15,11 +24,12 @@ export const getData = function(type, latitude, longitude) {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (type === "forecast") {
+        console.log(data);
         showWheatherData(data);
       } else {
-        // showCurrentData(data);
+        console.log(data);
+        showCurrentData(data);
       }
     });
 }

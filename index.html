@@ -15,7 +15,7 @@
     <title>Weather forecast</title>
     <script
       async
-      src="https://maps.googleapis.com/maps/api/js?key==places"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5pjTCaMrqPgBkLlk3cUL3NysomYLwuRM&libraries=places"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -26,16 +26,13 @@
       <select name="" id="favorite">
         <option value="1">-- Your favorite City --</option>
       </select>
-      <button id="button">☆</button>
-
-      <!-- <div>Favorite cities</div> -->
       <input type="text" id="autocomplete" />
-      <!-- <div id="root"></div> -->
     </div>
 
     <div id="app">
       <h2 class="city">Weather in the World</h2>
-      <div class="card">
+      <div class="card" id="current-weather-card">
+        <button id="favorite-btn">☆</button>
         <div class="weather loading">
           <h1 class="temp">25 °C</h1>
           <div class="flex">
@@ -61,8 +58,28 @@
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
-    <script type="module" src="./Js/favoriteCities.js"></script>
+    <script type="module" src="./Js/favoriteButton.js"></script>
+    <script type="module" src="./Js/favoriteSelector.js"></script>
     <script type="module" src="./Js/daysHoursWheather.js"></script>
     <script type="module" src="./Js/index.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+<!-- function showCurrentData(data) {
+  const {name} = data;
+  const {icon, description} = data.weather[0];
+  const {temp, humidity} = data.main;
+  const {speed} = data.wind;
+  console.log(name,icon,description,temp,humidity,speed);
+  document.querySelector(".city").innerText = "Weather in " + name;
+  document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+  document.querySelector(".description").innerText = description;
+  document.querySelector(".temp").innerText = temp + "°C";
+  document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+  document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
+  document.querySelector(".weather").classList.remove("loading"); -->
