@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
     <title>Weather forecast</title>
@@ -21,21 +21,21 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   <body>
-    <!-- Top part -->
-    <div class="header_search_part basic_layout">
-      <select name="" id="favorite">
-        <option value="1">-- Your favorite City --</option>
-      </select>
-      <button id="button">☆</button>
-
-      <!-- <div>Favorite cities</div> -->
-      <input type="text" id="autocomplete" />
-      <!-- <div id="root"></div> -->
+    <!-- Searching with inout and registering favorite cities -->
+    <div class="header_search_part">
+      <div class="wheather-select-box">
+        <select class="wheather-select" name="" id="favorite">
+          <option value="1">-- Your favorite City --</option>
+        </select>
+        <button class="wheather-button" id="button">☆</button>
+      </div>
+      <input class="wheather-input" type="text" id="autocomplete" />
     </div>
 
-    <div id="app">
-      <h2 class="city">Weather in the World</h2>
-      <div class="card">
+    <!-- Current location wheather forecast -->
+    <div class="wheather-forecast-current" id="app">
+      <div class="current-box">
+        <h2 class="city">Weather in the World</h2>
         <div class="weather loading">
           <h1 class="temp">25 °C</h1>
           <div class="flex">
@@ -58,6 +58,7 @@
     <!-- 3hours weather -->
     <div class="weather-forecast-hours" id="weather-forecast-hours"></div>
 
+    <!-- JavaScript files -->
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>

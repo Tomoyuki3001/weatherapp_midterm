@@ -1,59 +1,71 @@
-input {
-  height: 30px;
-  padding-left: 10px;
-  border-radius: 4px;
-  border: 1px solid rgb(186, 178, 178);
-  box-shadow: 0px 0px 12px #efefef;
-}
-
 body {
-  padding: auto;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: "Open Sans", sans-serif;
-  background: rgb(228, 222, 222);
-  font-size: 120%;
-  font-family: "Roboto", sans-serif;
   margin: 0%;
+  font-family: "Roboto", sans-serif;
+  color: #f5f5f5;
+  background: linear-gradient(to left, #4CA1AF, #2C3E50);
 }
 
-.card {
-  background: rgba(0, 0, 0, 0.8156862745);
-  color: white;
-  padding: 5em;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 420px;
-  margin: 1em;
+.header_search_part {
+  padding: 0% 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
 }
-
-h2.city {
-  text-align: center;
-}
-
-h1.temp {
-  margin: 0;
-  margin-bottom: 0.4em;
-}
-
-.flex {
+.header_search_part .wheather-select-box {
+  height: 100%;
+  width: 60%;
   display: flex;
   align-items: center;
 }
-
-.description {
-  text-transform: capitalize;
-  margin-left: 8px;
+.header_search_part .wheather-select-box .wheather-select {
+  width: 50%;
+  font-size: 2rem;
+}
+.header_search_part .wheather-select-box .wheather-button {
+  width: 20%;
+  font-size: 2rem;
+}
+.header_search_part .wheather-input {
+  width: 30%;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 2px solid rgb(186, 178, 178);
+  box-shadow: 0px 0px 10px #efefef;
+  font-size: 2rem;
 }
 
-.weather.loading {
+.wheather-forecast-current {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wheather-forecast-current .current-box {
+  text-align: center;
+}
+.wheather-forecast-current .current-box .city {
+  font-size: 2.5rem;
+}
+.wheather-forecast-current .current-box .temp {
+  font-size: 3rem;
+}
+.wheather-forecast-current .current-box .flex img {
+  width: 8rem;
+}
+.wheather-forecast-current .current-box .description {
+  text-transform: capitalize;
+}
+.wheather-forecast-current .current-box .description, .wheather-forecast-current .current-box .humidity, .wheather-forecast-current .current-box .wind {
+  font-size: 1.5rem;
+}
+.wheather-forecast-current .current-box .weather.loading {
   visibility: hidden;
   max-height: 20px;
   position: relative;
+  font-size: 3rem;
 }
-
-.weather.loading:after {
+.wheather-forecast-current .current-box .weather.loading:after {
   visibility: visible;
   content: "Loading...";
   color: white;
@@ -62,100 +74,158 @@ h1.temp {
   left: 20px;
 }
 
-.basic_layout {
-  margin: 3% 5%;
-}
-
-.header_search_part {
-  display: flex;
-  justify-content: space-between;
-}
-
 .weather-forecast-days {
-  height: 350px;
-  background-color: burlywood;
+  height: 17rem;
+  margin-top: 2%;
   display: flex;
   text-align: center;
   justify-content: space-around;
   align-items: center;
 }
-.weather-forecast-days .days_day {
-  font-size: 1.3rem;
+.weather-forecast-days .days_card {
+  width: 100%;
+  height: 100%;
+  padding: 1% 0%;
+  background: linear-gradient(to right, rgba(75, 121, 161, 0.3), rgba(40, 62, 81, 0.3));
 }
-.weather-forecast-days .days_temp {
-  font-size: 2.5rem;
-  margin-bottom: 5%;
+.weather-forecast-days .days_card .days_day, .weather-forecast-days .days_card .days_temp {
+  font-size: 2rem;
 }
-.weather-forecast-days .days_temp_feels, .weather-forecast-days .days_pop {
+.weather-forecast-days .days_card .days_pop {
   font-size: 1.5rem;
-  margin-top: 3%;
 }
 
 .weather-forecast-hours {
-  height: 350px;
-  background-color: darkgrey;
+  height: 15rem;
+  margin-top: 2%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 .weather-forecast-hours .hours_box {
+  width: 100%;
+  height: 100%;
+  padding: 2% 0%;
   text-align: center;
+  background: linear-gradient(to right, rgba(75, 121, 161, 0.3), rgba(40, 62, 81, 0.3));
 }
-.weather-forecast-hours .hours_box .hours_date, .weather-forecast-hours .hours_box .hours_time, .weather-forecast-hours .hours_box .hours_pop {
-  font-size: 1.1rem;
+.weather-forecast-hours .hours_box .hours_date, .weather-forecast-hours .hours_box .hours_time, .weather-forecast-hours .hours_box .hours_feels {
+  font-size: 0.8rem;
 }
 .weather-forecast-hours .hours_box .hours_temp {
   font-size: 1.5rem;
   margin-bottom: 3%;
 }
+.weather-forecast-hours .hours_box .hours_weather-icon {
+  width: 4rem;
+}
 .weather-forecast-hours .hours_box .hours_temp_feels {
-  font-size: 1.2rem;
-  margin-bottom: 3%;
+  font-size: 1rem;
+  margin-bottom: 1%;
+}
+.weather-forecast-hours .hours_box .hours_pop {
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 376px) {
-  .card {
-    background: rgba(9, 9, 9, 0.8156862745);
+  .header_search_part {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    align-items: center;
+    padding: 0% 3%;
+  }
+  .header_search_part .wheather-select-box .wheather-select {
+    width: 70%;
+    padding: 3% 3%;
+    border-radius: 4px;
+    background-color: rgba(44, 62, 80, 0.5);
+    font-size: 0.7rem;
+    height: 1.5rem;
+  }
+  .header_search_part .wheather-select-box .wheather-button {
+    font-size: 1rem;
+  }
+  .header_search_part .wheather-input {
+    height: 1.5rem;
+    width: 40%;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(186, 178, 178);
+    box-shadow: 0px 0px 5px #efefef;
+    font-size: 0.5rem;
+  }
+
+  .wheather-forecast-current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+  }
+  .wheather-forecast-current .current-box {
+    text-align: center;
+  }
+  .wheather-forecast-current .current-box .city {
+    font-size: 1.2rem;
+  }
+  .wheather-forecast-current .current-box .temp {
+    font-size: 2rem;
+  }
+  .wheather-forecast-current .current-box .flex img {
+    width: 6rem;
+  }
+  .wheather-forecast-current .current-box .description {
+    text-transform: capitalize;
+  }
+  .wheather-forecast-current .current-box .description, .wheather-forecast-current .current-box .humidity, .wheather-forecast-current .current-box .wind {
+    font-size: 1rem;
+  }
+  .wheather-forecast-current .current-box .weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+  }
+  .wheather-forecast-current .current-box .weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
     color: white;
-    padding: 2em;
-    border-radius: 30px;
-    width: 150%;
-    max-width: 250px;
-    margin: 1em;
+    position: absolute;
+    top: 0;
+    left: 20px;
   }
 
   .weather-forecast-days {
-    height: 200px;
-    padding: 0% 5%;
-    background-color: burlywood;
+    height: 13rem;
     display: flex;
     justify-content: space-around;
+    margin-top: 5%;
   }
-  .weather-forecast-days .days_box {
-    height: 90%;
-    width: 18%;
-    margin-top: 3%;
+  .weather-forecast-days .days_card {
     text-align: center;
+    padding: 5% 0%;
   }
-  .weather-forecast-days .days_box .days_temp {
-    font-size: 25px;
+  .weather-forecast-days .days_card .days_day {
+    font-size: 1rem;
+    margin-bottom: 3%;
+  }
+  .weather-forecast-days .days_card .days_temp {
+    font-size: 1.5rem;
     margin-bottom: 5%;
+    margin-bottom: 3%;
   }
-  .weather-forecast-days .days_box .days_feels {
-    font-size: 10px;
+  .weather-forecast-days .days_card .days_feels {
+    font-size: 0.5em;
   }
-  .weather-forecast-days .days_box .days_temp_feels {
-    font-size: 12px;
+  .weather-forecast-days .days_card .days_temp_feels {
+    font-size: 0.7rem;
     margin-bottom: 10%;
   }
-  .weather-forecast-days .days_box .days_pop {
-    font-size: 13px;
+  .weather-forecast-days .days_card .days_pop {
+    font-size: 0.8rem;
   }
 
   .weather-forecast-hours {
     height: 400px;
-    background-color: darkgrey;
-    padding-top: 3%;
+    margin-top: 5%;
     display: grid;
   }
   .weather-forecast-hours .hours_box {
@@ -163,8 +233,6 @@ h1.temp {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 90%;
-    margin-left: 5%;
   }
   .weather-forecast-hours .hours_box .hours_date, .weather-forecast-hours .hours_box .hours_time {
     font-size: 10px;

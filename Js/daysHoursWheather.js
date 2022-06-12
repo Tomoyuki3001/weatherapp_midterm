@@ -1,5 +1,8 @@
+//Data setting for 5days html and 3hours html
 const weatherForecastE1 = document.getElementById("weather-forecast-days");
 const weatherForecastE2 = document.getElementById("weather-forecast-hours");
+
+//Setting of making a object to get the wheather information
 
 let dateObject = {};
 function showWheatherData(data) {
@@ -24,6 +27,8 @@ function showWheatherData(data) {
       dateObject[propertyName].push(forecastObj);
     }
   });
+
+  //Making 5days wheather forecast part
 
   let daysNewArray = Object.keys(dateObject);
   daysNewArray.forEach((day) => {
@@ -51,10 +56,11 @@ function showWheatherData(data) {
         <div class="days_pop"><span class="iconify days_pop_icon" data-icon="bi:cloud-rain-heavy" style="color: white; font-size: 17px;"></span> ${pop}%</div>
   
       `;
-    // console.log(day);
     daysCard.setAttribute("name", day);
     weatherForecastE1.appendChild(daysCard);
   });
+
+  ////Making 3hours wheather forecast part
 
   let hoursNewData = dateObject[daysNewArray[0]];
 
@@ -73,7 +79,7 @@ function showWheatherData(data) {
       hoursCard.innerHTML = `
       <div class="hours_date_box">
       <div class="hours_date">${date}</div>
-      <div class="hours_time">${time}</div>
+      <div class="hours_time">${time.slice(0, 6)}</div>
       </div>
       <div><img
       src="http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png"
@@ -90,6 +96,8 @@ function showWheatherData(data) {
       weatherForecastE2.appendChild(hoursCard);
     });
   }
+
+  //When a user clicks each days, this 3hours forecast also will show up same day's forecast
   showUpHours(hoursNewData);
   const daysDateClick = document.querySelectorAll(".days_card");
   daysDateClick.forEach((dayClick) => {
@@ -100,6 +108,8 @@ function showWheatherData(data) {
       showUpHours(dateObject[day]);
     });
   });
+
+  // console.log("Object", dateObject);
 }
 
 export default showWheatherData;
