@@ -119,7 +119,6 @@ body {
 }
 .weather-forecast-hours .hours_box .hours_temp {
   font-size: 1.5rem;
-  margin-bottom: 3%;
 }
 .weather-forecast-hours .hours_box .hours_weather-icon {
   width: 4rem;
