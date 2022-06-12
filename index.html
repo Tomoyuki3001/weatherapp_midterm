@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
     <title>Weather forecast</title>
@@ -21,7 +21,7 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   <body>
-    <!-- Top part -->
+    <!-- Searching with inout and registering favorite cities -->
     <div class="header_search_part basic_layout">
       <select name="" id="favorite">
         <option value="1">-- Your favorite City --</option>
@@ -55,6 +55,7 @@
     <!-- 3hours weather -->
     <div class="weather-forecast-hours" id="weather-forecast-hours"></div>
 
+    <!-- JavaScript files -->
     <script src="./Js/jquery-3.6.0.min.js"></script>
     <script src="./Js/currentweather.js"></script>
     <script type="module" src="./Js/searchingInput.js"></script>
@@ -64,22 +65,3 @@
     <script type="module" src="./Js/index.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-<!-- function showCurrentData(data) {
-  const {name} = data;
-  const {icon, description} = data.weather[0];
-  const {temp, humidity} = data.main;
-  const {speed} = data.wind;
-  console.log(name,icon,description,temp,humidity,speed);
-  document.querySelector(".city").innerText = "Weather in " + name;
-  document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
-  document.querySelector(".description").innerText = description;
-  document.querySelector(".temp").innerText = temp + "°C";
-  document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-  document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
-  document.querySelector(".weather").classList.remove("loading"); -->
