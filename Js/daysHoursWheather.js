@@ -10,6 +10,8 @@ function showWheatherData(data) {
   weatherForecastE1.innerHTML = "";
   weatherForecastE2.innerHTML = "";
 
+  console.log("data", data);
+
   data.list.forEach((forecastObj) => {
     let date = forecastObj.dt_txt.slice(0, 10);
     let time = forecastObj.dt_txt.slice(10);
@@ -103,11 +105,12 @@ function showWheatherData(data) {
   daysDateClick.forEach((dayClick) => {
     dayClick.addEventListener("click", (e) => {
       const day = e.target.parentElement.getAttribute("name");
-      console.log("day", day);
       weatherForecastE2.innerHTML = "";
       showUpHours(dateObject[day]);
     });
   });
+
+  console.log("dataobject", dateObject);
 }
 
 export default showWheatherData;

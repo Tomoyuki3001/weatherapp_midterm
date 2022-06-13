@@ -24,10 +24,8 @@ export const getData = function (type, latitude, longitude) {
     .then((response) => response.json())
     .then((data) => {
       if (type === "forecast") {
-        console.log(data);
         showWheatherData(data);
       } else {
-        console.log(data);
         showCurrentData(data);
       }
     });
