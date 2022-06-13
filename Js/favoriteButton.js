@@ -3,22 +3,22 @@ function addFavoriteCity() {
 
   let prevFavoriteCities = JSON.parse(localStorage.getItem("favorite"));
   let prevFavoriteCitiesName = [];
-  
-  if(prevFavoriteCities != null) {
-    for(let city of prevFavoriteCities) {
+
+  if (prevFavoriteCities != null) {
+    for (let city of prevFavoriteCities) {
       prevFavoriteCitiesName.push(city.cityName);
     }
   }
 
   let updatedFavoriteCities = [];
-  if(prevFavoriteCitiesName.length == 0) {
+  if (prevFavoriteCitiesName.length == 0) {
     updatedFavoriteCities = [currentCity];
-  }else if(prevFavoriteCitiesName.includes(currentCity.cityName)) {
+  } else if (prevFavoriteCitiesName.includes(currentCity.cityName)) {
     return;
-  }  else {
+  } else {
     updatedFavoriteCities = [...prevFavoriteCities, currentCity];
   }
-  
+
   localStorage.setItem("favorite", JSON.stringify(updatedFavoriteCities));
 
   var option = document.createElement("option");
@@ -26,8 +26,7 @@ function addFavoriteCity() {
   option.value = JSON.stringify(currentCity.coordinate);
   let selector = document.getElementById("favorite");
   selector.appendChild(option);
-  
 }
 
- const favoriteBtn = document.getElementById("favorite-btn");
- favoriteBtn.addEventListener("click", addFavoriteCity);
+const favoriteBtn = document.getElementById("favorite-btn");
+favoriteBtn.addEventListener("click", addFavoriteCity);

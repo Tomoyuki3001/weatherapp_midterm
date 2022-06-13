@@ -10,8 +10,6 @@ function showWheatherData(data) {
   weatherForecastE1.innerHTML = "";
   weatherForecastE2.innerHTML = "";
 
-  console.log("data", data);
-
   data.list.forEach((forecastObj) => {
     let date = forecastObj.dt_txt.slice(0, 10);
     let time = forecastObj.dt_txt.slice(10);
@@ -43,20 +41,18 @@ function showWheatherData(data) {
     let newTempFeels = Math.trunc(tempFeels);
     let pop = Math.floor(dayData.pop * 100);
     daysCard.innerHTML = `
-    <div class="days_day">${moment(dayData.dt * 1000).format("ddd")}</div>
+    <div class="days_day">${dayData.dt_date}</div>
         <img
-          src="http://openweathermap.org/img/wn/${
-            dayData.weather[0].icon
-          }@2x.png"
+          src="http://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png"
           alt="weather icon"
           class="days_weather-icon"
         />
         <div class="days_temp">${newTemp}&#176</div>
         <div class="days_feels">Feels like</div>
         <div class="days_temp_feels">${newTempFeels}&#176</div>
-  
+
         <div class="days_pop"><span class="iconify days_pop_icon" data-icon="bi:cloud-rain-heavy" style="color: white; font-size: 17px;"></span> ${pop}%</div>
-  
+
       `;
     daysCard.setAttribute("name", day);
     weatherForecastE1.appendChild(daysCard);
@@ -105,12 +101,13 @@ function showWheatherData(data) {
   daysDateClick.forEach((dayClick) => {
     dayClick.addEventListener("click", (e) => {
       const day = e.target.parentElement.getAttribute("name");
+      console.log("day", day);
       weatherForecastE2.innerHTML = "";
       showUpHours(dateObject[day]);
     });
   });
-
-  console.log("dataobject", dateObject);
+  console.log("data", data);
+  console.log("date object", dateObject);
 }
 
 export default showWheatherData;
