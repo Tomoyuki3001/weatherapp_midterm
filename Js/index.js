@@ -2,14 +2,11 @@ import showWheatherData from "./daysHoursWheather.js";
 import WEATHER_OPEN_KEY from "./apikeys.js";
 
 navigator.geolocation.getCurrentPosition((success) => {
-  let { latitude, longitude } = success.coords;
-  if (latitude === undefined) {
+  if (latitude && longitude === undefined) {
     latitude = 49.2786062;
-  }
-  if (longitude === undefined) {
     longitude = -123.0999112;
   }
-  console.log("data check", latitude, longitude);
+  let { latitude, longitude } = success.coords;
   storeDefaultCity(latitude, longitude);
   getData("forecast", latitude, longitude);
   getData("weather", latitude, longitude);
