@@ -101,13 +101,10 @@ function showWheatherData(data) {
   daysDateClick.forEach((dayClick) => {
     dayClick.addEventListener("click", (e) => {
       const day = e.target.parentElement.getAttribute("name");
-      console.log("day", day);
       weatherForecastE2.innerHTML = "";
       showUpHours(dateObject[day]);
     });
   });
-  console.log("data", data);
-  console.log("date object", dateObject);
 }
 
 export default showWheatherData;

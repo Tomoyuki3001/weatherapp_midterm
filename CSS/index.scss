@@ -1,12 +1,170 @@
-//Style settings
-body {
-  margin: 0%;
-  font-family: 'Roboto', sans-serif;
-  color: #f5f5f5;
-  background: -moz-linear-gradient(right, #4CA1AF, #2C3E50);
-  background: -webkit-linear-gradient(right, #4CA1AF, #2C3E50);
-  background: linear-gradient(to left, #4CA1AF, #2C3E50);
-}
+@media (min-width: 300px) and (max-width: 599px)  {
+  body {
+    margin: 0%;
+    padding: 2% 5%;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5;
+    background: -moz-linear-gradient(right, #4CA1AF, #2C3E50);
+    background: -webkit-linear-gradient(right, #4CA1AF, #2C3E50);
+    background: linear-gradient(to left, #4CA1AF, #2C3E50);
+  }
+  //Searching and input styles
+    .header_search_part {
+      display: flex;
+      justify-content: space-between;
+      height: 3rem;
+      align-items: center;
+      padding: 0% 3%;
+        .wheather-select {
+          width: 40%;
+          padding: 1.5% 3%;
+          border-radius: 4px;
+          background-color: rgb(44, 62, 80, 0.5);
+          font-size: 0.7rem;
+          height: 1.5rem;
+          .wheather-select-option {
+            width: 10%;
+            font-size: 0.7rem;
+            
+          }
+        }
+      .wheather-input {
+        height: 1.5rem;
+        width: 40%;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(186, 178, 178);
+    box-shadow: 0px 0px 5px #efefef;
+    font-size: 0.7rem;
+      }
+    }
+    //Current location weather
+    .wheather-forecast-current {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 15rem;
+      .current-box{
+        text-align: center;
+        width: 100%;
+        .current-cityname-box{
+          display: flex;
+          width: 100%;
+          .favorite-button {
+            margin-left: 5%;
+            font-size: 1.5rem;
+          }
+        }
+        .city {
+          font-size: 1.2rem;
+        }
+        .temp {
+          font-size: 2rem;
+        }
+        .flex img {
+          width: 6rem;
+        }
+        .description {
+          text-transform: capitalize;
+        }
+        .description, .humidity, .wind {
+          font-size: 1rem;
+        }
+        .weather.loading {
+          visibility: hidden;
+          max-height: 20px;
+          position: relative;
+        }
+        .weather.loading:after {
+          visibility: visible;
+          content: "Loading...";
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 20px;
+        }
+      }
+    }
+    
+    //5 days weather
+    .weather-forecast-title {
+      margin: 5% 0%;
+    }
+    .weather-forecast-days {
+      height: 13rem;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5%;
+      .days_card {
+        text-align: center;
+        padding: 5% 0%;
+        .days_day {
+          font-size:0.5rem;
+          margin-bottom: 3%;
+        }
+        .days_temp {
+          font-size: 1.5rem;
+          margin-bottom: 5%;
+          margin-bottom: 3%;
+        }
+        .days_feels {
+          font-size: 0.5em;
+        }
+        .days_temp_feels {
+          font-size: 0.7rem;
+          margin-bottom: 10%;
+        }
+        .days_pop {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    
+    //3hours weather
+    .weather-forecast-hours {
+      height: 400px;
+      margin-top: 5%;
+      display: grid;
+      .hours_box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        
+        .hours_date, .hours_time{
+            font-size: 10px;
+          }
+        .hours_weather-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+        .hours_temp {
+          font-size: 1.5rem;
+        }
+        .hours_feels {
+          font-size: 0.5rem;
+        }
+        .hours_temp_feels, .hours_pop {
+          font-size: 0.7rem;
+        }
+        .hours_feels_box {
+          text-align: center;
+        }
+      }
+    }
+    }
+
+@media (min-width: 601px) {
+
+  body {
+    margin: 0%;
+    padding: 2% 5%;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5;
+    background: -moz-linear-gradient(right, #4CA1AF, #2C3E50);
+    background: -webkit-linear-gradient(right, #4CA1AF, #2C3E50);
+    background: linear-gradient(to left, #4CA1AF, #2C3E50);
+  }
 
 //header search part
 .header_search_part {
@@ -87,6 +245,9 @@ body {
 }
 
 //5 days weather
+.weather-forecast-title {
+  margin: 5% 0% 3% 0%;
+}
 .weather-forecast-days {
   height: 17rem;
   margin-top: 3%;
@@ -146,145 +307,4 @@ body {
   }
 }
 
-@media screen and (max-width : 376px) {
-//Searching and input styles
-  .header_search_part {
-    display: flex;
-    justify-content: space-between;
-    height: 3rem;
-    align-items: center;
-    padding: 0% 3%;
-      .wheather-select {
-        width: 40%;
-        padding: 1.5% 3%;
-        border-radius: 4px;
-        background-color: rgb(44, 62, 80, 0.5);
-        font-size: 0.7rem;
-        height: 1.5rem;
-        .wheather-select-option {
-          width: 10%;
-          font-size: 0.7rem;
-          
-        }
-      }
-    .wheather-input {
-      height: 1.5rem;
-      width: 40%;
-  padding-left: 10px;
-  border-radius: 4px;
-  border: 1px solid rgb(186, 178, 178);
-  box-shadow: 0px 0px 5px #efefef;
-  font-size: 0.7rem;
     }
-  }
-  //Current location weather
-  .wheather-forecast-current {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15rem;
-    .current-box{
-      text-align: center;
-      width: 100%;
-      .current-cityname-box{
-        width: 100%;
-        .favorite-button {
-          margin-left: 5%;
-          font-size: 1.5rem;
-        }
-      }
-      .city {
-        font-size: 1.2rem;
-      }
-      .temp {
-        font-size: 2rem;
-      }
-      .flex img {
-        width: 6rem;
-      }
-      .description {
-        text-transform: capitalize;
-      }
-      .description, .humidity, .wind {
-        font-size: 1rem;
-      }
-      .weather.loading {
-        visibility: hidden;
-        max-height: 20px;
-        position: relative;
-      }
-      .weather.loading:after {
-        visibility: visible;
-        content: "Loading...";
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 20px;
-      }
-    }
-  }
-  
-  //5 days weather
-  .weather-forecast-days {
-    height: 13rem;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5%;
-    .days_card {
-      text-align: center;
-      padding: 5% 0%;
-      .days_day {
-        font-size:0.5rem;
-        margin-bottom: 3%;
-      }
-      .days_temp {
-        font-size: 1.5rem;
-        margin-bottom: 5%;
-        margin-bottom: 3%;
-      }
-      .days_feels {
-        font-size: 0.5em;
-      }
-      .days_temp_feels {
-        font-size: 0.7rem;
-        margin-bottom: 10%;
-      }
-      .days_pop {
-        font-size: 0.8rem;
-      }
-    }
-  }
-  
-  //3hours weather
-  .weather-forecast-hours {
-    height: 400px;
-    margin-top: 5%;
-    display: grid;
-    .hours_box {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: 100%;
-      
-      .hours_date, .hours_time{
-          font-size: 10px;
-        }
-      .hours_weather-icon {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-      .hours_temp {
-        font-size: 1.5rem;
-      }
-      .hours_feels {
-        font-size: 0.5rem;
-      }
-      .hours_temp_feels, .hours_pop {
-        font-size: 0.7rem;
-      }
-      .hours_feels_box {
-        text-align: center;
-      }
-    }
-  }
-  }
