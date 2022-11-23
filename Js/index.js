@@ -3,7 +3,7 @@ import WEATHER_OPEN_KEY from "./apikeys.js";
 
 navigator.geolocation.getCurrentPosition((success) => {
   let { latitude, longitude } = success.coords;
-  if (!latitude) {
+  if (!latitude && !longitude) {
     storeDefaultCity(49.2786062, -123.0999112);
     getData("forecast", 49.2786062, -123.0999112);
     getData("weather", 49.2786062, -123.0999112);
