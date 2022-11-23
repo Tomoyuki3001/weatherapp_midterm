@@ -4,13 +4,14 @@ import WEATHER_OPEN_KEY from "./apikeys.js";
 navigator.geolocation.getCurrentPosition((success) => {
   let { latitude, longitude } = success.coords;
   if (!latitude) {
+    storeDefaultCity(49.2786062, -123.0999112);
     getData("forecast", 49.2786062, -123.0999112);
     getData("weather", 49.2786062, -123.0999112);
-    return;
+  } else {
+    storeDefaultCity(latitude, longitude);
+    getData("forecast", latitude, longitude);
+    getData("weather", latitude, longitude);
   }
-  storeDefaultCity(latitude, longitude);
-  getData("forecast", latitude, longitude);
-  getData("weather", latitude, longitude);
 });
 
 function storeDefaultCity(latitude, longitude) {
